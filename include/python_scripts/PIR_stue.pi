@@ -1,0 +1,9 @@
+from gpiozero import MotionSensor
+import time
+
+pir = MotionSensor(4)
+
+if(pir.wait_for_motion(4)):
+    print("1")
+else:
+    print("0")

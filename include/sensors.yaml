@@ -1,0 +1,19 @@
+- platform: systemmonitor
+  resources:
+    - type: disk_free
+      arg: /
+
+#- platform: template
+#  sensors:
+#    rt_ac52u_bytes_sent:
+#      value_template: '{{ states.sensor.rt_ac52u_bytes_sent.state | multiply(0.000000000) }}'
+#      friendly_name: 'GB sent'
+#      unit_of_measurement: 'GB'
+##Something like this {{ states.sensor.bytes_sent | filesizeformat() }}/s 
+
+- platform: command_line
+  name: PIR_stue
+  command: 'python /config/include/python_scripts/PIR_stue.pi'
+  scan_interval: 5
+  command_timeout: 5
+      

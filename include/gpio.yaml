@@ -1,0 +1,3 @@
+  - platform: rpio_gpio
+    ports:
+      4: PIR stue
