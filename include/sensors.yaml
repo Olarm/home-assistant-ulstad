@@ -16,4 +16,18 @@
   command: 'python /config/include/python_scripts/PIR_stue.pi'
   scan_interval: 5
   command_timeout: 5
-      
+     
+- platform: bme280
+  name: Ambient
+  i2c_address: 0x76
+  operation_mode: 2  # forced mode
+  time_standby: 5
+  oversampling_temperature: 4
+  oversampling_pressure: 4
+  oversampling_humidity: 4
+  delta_temperature: -0.5
+  monitored_conditions:
+    - temperature
+    - humidity
+    - pressure
+  scan_interval: 40 

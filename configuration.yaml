@@ -22,6 +22,14 @@ default_config:
 # Discover some devices automatically
 discovery:
 
+# Bluetooth LE, requires --privileged in docker-compose.yaml
+device_tracker:
+  - platform: bluetooth_le_tracker
+    track_new_devices: True	#BLE throws error without this
+
+lovelace:
+  mode: yaml
+
 # Text to speech
 tts:
   - platform: google_translate
